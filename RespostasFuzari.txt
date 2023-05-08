@@ -10,7 +10,7 @@ I - ) select lower(s.NomeSetor),upper(s.NomeSetor) from lsetor s;
 J - ) select s.*,v.Versao from lsoftware s join lversao v on s.idSOFTWARE = v.idsoftware_fk order by v.Versao asc, s.idSoftware asc;
 K - ) select c.*,e.descricaotipo,s.nomesetor from lcliente c join lsetor s on c.idSETOR_FK = s.idsetor join ltipo_empresa e on c.idtipo_empresa_fk = e.idtipo_empresa order by s.nomesetor, e.descricaotipo;
 L - ) select c.idcliente,c.nome_razaosocial,l.numlicenca,l.dtaquisicao,l.valoraquisicao from lcliente c join llicenca l on c.idcliente = l.idcliente_fk;
-M - ) select distinct c.*,s.nomesoftware from lcliente c join llicenca l on c.idcliente = l.idcliente_fk join lsoftware s on s.idsoftware = l.idsoftware_fk_fk;
+M - ) select distinct c.*,s.nomesoftware from lcliente c join llicenca l on c.idcliente = l.idcliente_fk join lsoftware s on s.idsoftware = l.idsoftware_fk_fk order by ORDER BY c.idcliente DESC, s.nomesoftware DESC;
 N - ) SELECT lc.*,lte.DescricaoTipo,ls.NomeSetor FROM lcliente lc join ltipo_empresa lte on lc.idTipo_empresa_fk = lte.idtipo_empresa join lsetor ls on lc.idsetor_fk = ls.idsetor 
 WHERE lc.uf in ('SP','RS','PR','MG');
 O - ) SELECT s.*,v.*,c.Nome_razaosocial,le.DescricaoTipo,ls.NomeSetor, l.NumLicenca, l.dtAquisicao, l.ValorAquisicao FROM lsoftware s join lversao v on s.idsoftware = v.idsoftware_fk 
