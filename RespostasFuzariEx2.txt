@@ -1,0 +1,8 @@
+A - ) select * from employees e join customers c on e.employeeNumber = c.salesRepemployeenumber;
+B - ) select c.customerNumber, c.customerName, sum(o.customerNumber) from customers c join orders o on c.customerNumber = o.customerNumber group by c.customerNumber;
+C - ) select c.customerNumber, c.customerName, avg(o.customerNumber) from customers c join orders o on c.customerNumber = o.customerNumber group by c.customerNumber;
+D - ) select o.officeCode, o.addressLine1 , count(e.employeeNumber) from offices o join employees e on o.officeCode = e.officeCode group by o.officeCode;
+E - ) select e.employeeNumber, e.firstname,e.lastname, count(o.customerNumber) as 'vendas' from employees e join customers c on e.employeenumber = c.salesrepemployeenumber join orders o on c.customernumber = o.customernumber group by e.employeeNumber;
+F - ) select p.productcode, p.productname, count(od.productCode) as qnt from products p join orderdetails od on p.productcode = od.productcode group by od.productCode order by count(od.productCode) desc LIMIT 5;
+G - ) select * from (select p.productcode, p.productname, count(od.productCode) as qnt from products p join orderdetails od on p.productcode = od.productcode group by od.productCode order by count(od.productCode) desc)d where d.qnt > 28;
+H - ) select * from employees where employeeNumber NOT IN (select e.employeeNumber from employees e join customers c on e.employeeNumber = c.salesrepemployeeNumber join orders o on c.customernumber = o.customernumber);
