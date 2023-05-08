@@ -3,7 +3,7 @@ B - ) select l.* from llicenca l where  month(l.dtAquisicao) = 11;
 C - ) select l.* from llicenca l where  month(l.dtAquisicao) = 5 and year(l.dtAquisicao) = 2007;
 D - ) select e.*, substring(e.DescricaoTipo,1,5)as '5 Primerias Letras' from ltipo_empresa e order by e.DescricaoTipo asc;
 E - ) select e.*, substring(e.DescricaoTipo,(length(e.DescricaoTipo)-4),length(e.DescricaoTipo))as '5 Ultimas Letras' from ltipo_empresa e order by e.DescricaoTipo desc;
-F - ) select e.*, substring(e.DescricaoTipo,6,10)as '6 à 10' from ltipo_empresa e;
+F - ) select e.*, substring(e.DescricaoTipo,6,5)as '6 à 10' from ltipo_empresa e;
 G - ) select c.Nome_RazaoSocial, char_length(c.Nome_RazaoSocial) from lcliente c order by c.Nome_RazaoSocial asc;
 H - ) select l.NumLicenca, l.dtAquisicao, datediff(now(), l.dtAquisicao) as 'Dias de compra' from llicenca l;
 I - ) select lower(s.NomeSetor),upper(s.NomeSetor) from lsetor s;
